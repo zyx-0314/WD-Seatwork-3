@@ -1,0 +1,249 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Dev */
+header.design-one,
+header.design-one * {
+    /* outline: 1px black dotted; */
+}
+
+.design-two,
+.design-two * {
+    /* outline: 1px brown dotted; */
+}
+
+.design-three,
+.design-three * {
+    /* outline: 1px blue dotted; */
+}
+
+/* Dep */
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 200vh;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+section {
+    width: 100vw;
+    padding: 1rem 5vw;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-end;
+}
+
+/* Nested Specific */
+header.design-one {
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    padding: .7rem 10vw;
+    background:wheat;
+    
+    & > img.company-logo {
+        height: 50px;
+    }
+
+    & > nav.navigation {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        & > a.navigation-content {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: black;
+        }
+    }
+
+}
+
+/* Nested Class */
+.design-two {
+    display: flex;
+    width: 100vw;
+    justify-content: space-between;
+    padding: .7rem 10vw;
+    align-items: center;
+    background: black;
+
+    & > .navigation {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+
+        & > .navigation-content {
+            color: aliceblue;
+            font-weight: 800;
+            font-size: 1.2rem;
+        }
+
+        & > .call-to-action {
+            border: 1px white solid;
+            padding: .5rem 1rem;
+            border-radius: 5px;
+        }
+    }
+}
+
+/* Non-Nested */
+.design-three {
+    display: flex;
+    width: 100vw;
+    justify-content: space-between;
+    padding: .7rem 14vw;
+    box-shadow: 0 10px 0px 0px rgba(0,0,0,1);
+    -webkit-box-shadow: 0 10px 0px 0px rgba(0,0,0,1);
+    -moz-box-shadow: 0 10px 0px 0px rgba(0,0,0,1);
+border: 1px solid black;
+border-radius: 5px;
+}
+
+.design-three .navigation {
+    display: flex;
+    gap: .7rem;
+    align-items: center;
+}
+
+.design-three .navigation .nav-button {
+    font-weight: 800;
+    font-size: 1.1rem;
+}
+
+.design-three .navigation .bi {
+    font-size: 2.5rem;
+}
+
+/* Universal Class */
+.company-logo {
+    height: 50px;
+}
+
+/* Design with animation */
+header.design-one-animation {
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10vw;
+    height: calc(50px + 1rem);
+    align-items: center;
+    background:rgb(252, 240, 218);
+    
+    & > img.company-logo {
+        height: 50px;
+        transition: all .3s ease;
+        padding: .2rem 0;
+
+        &:hover {
+            transform: rotateZ(720deg);
+        }
+    }
+
+    & > nav.navigation {
+        display: flex;
+        align-items: center;
+        height: 100%;
+
+        & > a.navigation-content {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: black;
+            transition: .2s ease;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            padding: 0 1rem;
+
+            &:hover {
+                background: rgb(255, 229, 79);
+            }
+        }
+    }
+
+}
+
+header.design-two-animation {
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10vw;
+    height: calc(50px + 1rem);
+    align-items: center;
+    background:rgb(252, 240, 218);
+    
+    & > .pop-up {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        
+        & > img.company-logo {
+            height: 50px;
+            padding: .2rem 0;
+            transition: all .3s ease;
+    
+        }
+        
+        & > h1 {
+            color: transparent;
+            transform: translateX(-5rem);
+            transition: all .3s ease;
+        }
+
+        &:hover {
+             & > img.company-logo {
+                transform: rotateZ(720deg);
+            }
+
+            & > h1 {
+                color: black;
+                transform: translateX(0);
+            }
+        }
+    }
+
+    & > nav.navigation {
+        display: flex;
+        align-items: center;
+        height: 100%;
+
+        & > a.navigation-content {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: black;
+            transition: .2s ease;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            padding: 0 1rem;
+            border: 1px transparent solid;
+
+            &:hover {
+                background: rgb(255, 229, 79);
+                transform: translate(-10px,-10px);
+                box-shadow: 10px 10px 0px 0px rgb(107, 98, 43);
+                border: 1px rgb(0, 0, 0) solid;
+            }
+
+            &:active {
+                background: rgb(252, 217, 21);
+                transform: translate(0px,0px);
+                box-shadow: 0px 0px 0px 0px rgb(107, 98, 43);
+                border: 1px transparent solid;
+
+            }
+        }
+    }
+
+}
