@@ -70,7 +70,7 @@ header.design-one {
 
 }
 
-/* Nested Class */
+/* Nested Specific Class */
 .design-two {
     display: flex;
     width: 100vw;
@@ -98,10 +98,11 @@ header.design-one {
     }
 }
 
-/* Non-Nested */
+/* Non-Nested Non-Specific */
 .design-three {
     display: flex;
-    width: 100vw;
+    align-self: flex-start;
+    width: calc(100% - 1rem);
     justify-content: space-between;
     padding: .7rem 14vw;
     box-shadow: 0 10px 0px 0px rgba(0,0,0,1);
@@ -129,6 +130,34 @@ header.design-one {
 /* Universal Class */
 .company-logo {
     height: 50px;
+}
+
+/* Nested Non-Specific */
+.design-four {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 2rem;
+    width: 100vw;
+    box-shadow: 0 10px  rgba(124, 124, 124, 0.534);
+    padding: 1.5rem 0;
+    border: 1px black solid;
+
+    & .company-logo {
+        height: 70px;
+    }
+
+    & .navigation {
+        display: flex;
+        gap: 1rem;
+
+    }
+    & .navigation-content {
+        color: black;
+        font-weight: 700;
+        font-size: 1.2rem;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
 }
 
 /* Design with animation */
