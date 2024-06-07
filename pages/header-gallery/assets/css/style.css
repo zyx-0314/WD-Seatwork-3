@@ -98,7 +98,7 @@ header.design-one {
     }
 }
 
-/* Non-Nested Non-Specific */
+/* Non-Nested Non-Specific Class */
 .design-three {
     display: flex;
     align-self: flex-start;
@@ -132,7 +132,7 @@ header.design-one {
     height: 50px;
 }
 
-/* Nested Non-Specific */
+/* Nested Non-Specific Class */
 .design-four {
     display: flex;
     align-items: flex-end;
@@ -150,8 +150,8 @@ header.design-one {
     & .navigation {
         display: flex;
         gap: 1rem;
-
     }
+
     & .navigation-content {
         color: black;
         font-weight: 700;
@@ -169,7 +169,7 @@ header.design-one-animation {
     height: calc(50px + 1rem);
     align-items: center;
     background:rgb(252, 240, 218);
-    
+
     & > img.company-logo {
         height: 50px;
         transition: all .3s ease;
@@ -211,34 +211,33 @@ header.design-two-animation {
     height: calc(50px + 1rem);
     align-items: center;
     background:rgb(252, 240, 218);
-    
+
     & > .pop-up {
         display: flex;
         align-items: center;
         gap: 1rem;
-        
+
+        &:hover {
+            & > img.company-logo {
+               transform: rotateZ(720deg);
+           }
+
+           & > h1 {
+               color: black;
+               transform: translateX(0);
+           }
+       }
+
         & > img.company-logo {
             height: 50px;
             padding: .2rem 0;
             transition: all .3s ease;
-    
         }
-        
+
         & > h1 {
             color: transparent;
             transform: translateX(-5rem);
             transition: all .3s ease;
-        }
-
-        &:hover {
-             & > img.company-logo {
-                transform: rotateZ(720deg);
-            }
-
-            & > h1 {
-                color: black;
-                transform: translateX(0);
-            }
         }
     }
 
@@ -270,9 +269,91 @@ header.design-two-animation {
                 transform: translate(0px,0px);
                 box-shadow: 0px 0px 0px 0px rgb(107, 98, 43);
                 border: 1px transparent solid;
-
             }
         }
     }
+}
 
+.design-three-animation {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 2rem;
+    width: 100vw;
+    box-shadow: 0 10px  rgba(124, 124, 124, 0.534);
+    padding: 1.5rem 0;
+    border: 1px black solid;
+
+    &:hover .company-logo:not(:hover),
+    &:hover .navigation-content:not(:hover) {
+        transform: scale(.85);
+        opacity: .7;
+    }
+
+    & .company-logo {
+        height: 70px;
+        transition: .3s ease;
+
+        &:hover {
+            filter: drop-shadow(5px 5px 5px rgb(141, 141, 141));
+        }
+    }
+
+    & .navigation {
+        display: flex;
+        gap: 1rem;
+    }
+
+    & .navigation-content {
+        color: black;
+        font-weight: 700;
+        font-size: 1.2rem;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        transition: .3s ease;
+        border-bottom: 3px solid transparent;
+        
+        &::before {
+            background: #57575783;
+            width: 10px;
+            height: 20px;
+            content: "";
+            display: block;
+            position:relative;
+            top: 20px;
+            right: 5px;
+            transition: .3s ease;
+            z-index: -1;
+        }
+
+        &:hover {
+            &.blue{
+                border-bottom: 3px solid blue;
+                &::before {
+                    background: #4ca9ff83;
+                }
+            }
+
+            &.red{
+                border-bottom: 3px solid red;
+                &::before {
+                    background: #ff4c4c83;
+                }
+            }
+
+            &.violet{
+                border-bottom: 3px solid violet;
+                &::before {
+                    background: #f94cff83;
+                }
+            }
+
+            &.green{
+                border-bottom: 3px solid green;
+                &::before {
+                    background: #5bff4c83;
+                }
+            }
+
+        }
+    }
 }
