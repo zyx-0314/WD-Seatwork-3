@@ -49,6 +49,11 @@ section {
   align-items: flex-end;
 }
 
+.bi {
+  font-size: 1.5rem;
+  color: black;
+}
+
 /* Nested Specific */
 header.design-one {
   width: 100vw;
