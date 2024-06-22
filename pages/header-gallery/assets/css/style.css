@@ -9,34 +9,11 @@ a {
   text-decoration: none;
 }
 
-/* Dev */
-header.design-one,
-header.design-one * {
-  /* outline: 1px black dotted; */
-}
-
-.design-two,
-.design-two * {
-  /* outline: 1px brown dotted; */
-}
-
-.design-three,
-.design-three * {
-  /* outline: 1px blue dotted; */
-}
-
-.design-five,
-.design-five * {
-  /* outline: 1px dotted yellow; */
-}
-
-/* Dep */
-
 body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 500vh;
+  height: fit-content;
   width: 100vw;
   overflow-x: hidden;
 }
@@ -473,6 +450,86 @@ header.design-two-animation {
         border-color: black;
       }
     }
+  }
+}
+
+.design-five-animation {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 2rem;
+  width: 100vw;
+  box-shadow: 0 10px rgba(124, 124, 124, 0.534);
+  padding: 1.5rem 0;
+  border: 1px black solid;
+
+  &:hover {
+    & .navigation-content:not(:hover) {
+      transform: scale(.5);
+    }
+  }
+
+  & .name {
+    color: transparent;
+    position: absolute;
+    padding-left: 28px;
+    transform: translateY(0) scale(0);
+    transition: all ease .2s;
+  }
+
+  & .bubbles {
+    position: absolute;
+    width: 12px;
+    transform: translateX(13px);
+    transition: all ease .2s;
+    z-index: -1;
+  }
+
+  & .company-logo {
+    height: 70px;
+    transition: all ease .2s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    &:active {
+      transform: scale(.8);
+      filter: drop-shadow(0 0 10px black);
+
+      & ~ .name {
+        color: black;
+        transform: translateY(20px);
+      }
+
+      & ~ .bubbles {
+        &.bubble1 {
+          transform: translateY(-70px) translateX(13px);
+        }
+        
+        &.bubble2 {
+          transform: translateY(-65px) translateX(-5px);
+        }
+    
+        &.bubble3 {
+          transform: translateY(-65px) translateX(30px);
+        }
+      }
+    }
+  }
+
+  & .navigation {
+    display: flex;
+    gap: 1rem;
+  }
+
+  & .navigation-content {
+    color: black;
+    font-weight: 700;
+    font-size: 1.2rem;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      transition: all .2s ease;
   }
 }
 

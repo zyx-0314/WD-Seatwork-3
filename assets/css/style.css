@@ -31,33 +31,42 @@ body {
   background: -webkit-linear-gradient(75deg, #9ba8ce 0%, #6400a7 100%);
 }
 
+video {
+  position:absolute;
+  z-index: -1;
+  object-fit:cover;
+  width: 100vw;
+  height: 100vh;
+  opacity: 70%;
+}
+
 .container {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
   width: 100vw;
-  padding: clamp(0, 1vw, 5vw);
+  padding: clamp(.5vw, 3vw, 5vw);
   background: linear-gradient(
     -8deg,
     #ffffff00 0%,
     #ffffff00 26%,
-    #4900a8 26%,
-    #4900a8 100%
+    #4900a87a 26%,
+    #4900a87a 100%
   );
   background: -moz-linear-gradient(
     -8deg,
     #ffffff00 0%,
     #ffffff00 26%,
-    #4900a8 26%,
-    #4900a8 100%
+    #4900a87a 26%,
+    #4900a87a 100%
   );
   background: -webkit-linear-gradient(
     -8deg,
     #ffffff00 0%,
     #ffffff00 26%,
-    #4900a8 26%,
-    #4900a8 100%
+    #4900a87a 26%,
+    #4900a87a 100%
   );
 
   & > .pokemon {
@@ -139,19 +148,19 @@ body {
     flex-direction: column;
 
     & > h3.subtitle {
-      font-size: clamp(1rem, 1vw, 2rem );
+      font-size: clamp(1rem, 1.5rem, 2rem );
       font-weight: 100;
-      letter-spacing: clamp(.3rem, 1vw, 1rem);
+      letter-spacing: clamp(.3rem, 1rem, 1.3rem);
       margin-bottom: 1rem;
     }
 
     & > h1.title {
-      font-size: clamp(2rem, 1vw, 5rem);
+      font-size: clamp(2rem, 3rem, 4rem);
       margin-bottom: 2rem;
     }
 
     & > p.description {
-      font-size: clamp(.6rem, 1vw, 1.2rem);
+      font-size: clamp(.6rem, 1rem, 1.2rem);
       margin-bottom: 3rem;
     }
 
